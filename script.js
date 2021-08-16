@@ -4,6 +4,7 @@ let descricao = document.querySelector('.d-1-4');
 let aviso = document.querySelector('.d-2');
 let lateral = document.querySelector('.d-1-rigth');
 let numeros = document.querySelector('.d-1-3');
+let audio = document.querySelector('.audio');
 
 let etapaAtual = 0;
 let numero = '';
@@ -124,6 +125,7 @@ function confirma() {
         } else {
            document.querySelector('.tela').innerHTML = '<div class="aviso--gigante pisca">FIM</div>';
            console.log(votos);
+           audio.play();
            
         }
     }
