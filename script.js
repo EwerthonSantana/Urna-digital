@@ -5,6 +5,7 @@ let aviso = document.querySelector('.d-2');
 let lateral = document.querySelector('.d-1-rigth');
 let numeros = document.querySelector('.d-1-3');
 let audio = document.querySelector('.audio');
+let audio1 = document.querySelector('.audio1');
 
 let etapaAtual = 0;
 let numero = '';
@@ -73,6 +74,7 @@ function clicou(n) {
     if (elnumero !== null) {
         elnumero.innerHTML = n;
         numero = `${numero}${n}`;
+        audio1.play();
     }
     elnumero.classList.remove('pisca');
     if (elnumero.nextElementSibling !== null) {
@@ -83,6 +85,7 @@ function clicou(n) {
 }
 
 function branco() {
+    audio1.play();
     numero = '';
     votoBranco = true;
     seuVotoPara.style.display = 'block';
@@ -95,9 +98,11 @@ function branco() {
 
 function corrige() {
     comecarEtapa();
+    audio1.play();
 }
 
 function confirma() {
+    audio1.play();
     let etapa = etapas[etapaAtual];
 
     let votoConfirmado = false;
@@ -123,10 +128,10 @@ function confirma() {
         if (etapas[etapaAtual] !== undefined) {
             comecarEtapa();
         } else {
-           document.querySelector('.tela').innerHTML = '<div class="aviso--gigante pisca">FIM</div>';
-           console.log(votos);
-           audio.play();
-           
+            document.querySelector('.tela').innerHTML = '<div class="aviso--gigante pisca">FIM</div>';
+            console.log(votos);
+            audio.play();
+
         }
     }
 }
